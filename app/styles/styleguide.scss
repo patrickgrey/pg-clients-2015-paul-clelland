@@ -1,0 +1,296 @@
+// TABLE OF CONTENTS: Each item maps to a section and/or include.
+// It goes in the master stylesheet.
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ * Buttons..............Button elements.
+ *
+ * TRUMPS
+ * Text.................Text helpers.
+ */
+
+// TITLING: Begin every new major section of a CSS project with a title:
+// # is to aid searching. If multiple sections, each preceed by 5 lines.
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-TITLE
+\*------------------------------------*/
+
+.selector {}
+
+
+
+
+
+/*------------------------------------*\
+    #ANOTHER-SECTION
+\*------------------------------------*/
+
+/**
+ * Comment
+ */
+
+.another-selector {}
+
+// [selector] {
+//     [property]: [value];
+//     [<--declaration--->]
+// }
+
+// .foo, .foo--bar,
+// .baz {
+//     display: block;
+//     background-color: green;
+//     color: red;
+// }
+
+// related selectors on the same line; unrelated selectors on new lines;
+// a space before our opening brace ({);
+// a space after our property–value delimiting colon (:);
+
+// Multi-line CSS:
+// More ‘truthful’ and reliable diffs, because one line only ever carries one 
+// change.
+// Exceptions to this rule should be fairly apparent, such as similar rulesets 
+// that only carry one declaration each.
+// .icon--home     { background-position:   0     0  ; }
+// .icon--person   { background-position: -16px   0  ; }
+
+
+// Indenting:
+// As well as intending individual declarations, indent entire related rulesets
+// to signal their relation to one another, for example:
+/* .foo {}
+
+    .foo__bar {}
+
+        .foo__baz {} */
+// By doing this, a developer can see at a glance that .foo__baz {} lives 
+// inside .foo__bar {} lives inside .foo {}.
+
+// Indenting Sass:
+/* .foo {
+    color: red;
+
+    .bar {
+        color: blue;
+    }
+
+} */
+
+// Alignment:
+// Attempt to align common and related identical strings in declarations.
+// This helps column editing.
+/* .foo {
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+} */
+/* .bar {
+    position: absolute;
+    top:    0;
+    right:  0;
+    bottom: 0;
+} */
+
+// Meaningful Whitespace:
+// One (1) empty line between closely related rulesets.
+// Two (2) empty lines between loosely related rulesets.
+// Five (5) empty lines between entirely new sections.
+
+// HTML:
+// Separate classes with two spaces
+
+
+// COMMENTING
+// Low level - if you want to comment on specifi declarations:
+/**
+ * General description
+ *
+ * 1. Mastheads will typically ...
+ * THEN:
+ * 
+ */
+// .page-head--masthead {
+//     margin-bottom: 0;
+//     color: $color-masthead; /* [1] */
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+
+//     @include media-query(lap-and-up) {
+//         background-image: url(/img/css/masthead-medium.jpg);
+//     }
+
+//     > .wrapper { /* [2] */
+//         position: relative; /* [3] */
+//         padding-top: 56.25%; /* [4] */
+
+//         @media screen and (min-width: 758px) { /* [5] */
+//             padding-top: 0; /* [6] */
+//             height: $header-max-height - double($spacing-unit) - $header-border-width; /* [7] */
+//         }
+
+//     }
+
+// }
+
+// Use // for Sass specific things which will not be compiled
+/* Use these comments for CSS comments */
+
+// NAMING CONVENTIONS:
+// Use hyphens instead of camel or underscore
+
+// BEM-like Naming:
+// BEM = Block, Element, Modifier
+/* 
+Block: The sole root of the component.
+Element: A component part of the Block.
+Modifier: A variant or extension of the Block. */
+
+// Analogy:
+/* 
+.person {}
+.person__head {}
+.person--tall {} */
+
+/* Your Block context starts at the most logical, self-contained, discrete
+location. To continue with our person-based analogy, we’d not have a class like
+ .room__person {} */
+ 
+ /* 
+ Example:
+ 
+ 
+ .page {}
+
+
+.content {}
+
+
+.sub-content {}
+
+
+.footer {}
+
+    .footer__copyright {}
+Incorrect notation for this would be:
+
+.page {}
+
+    .page__content {}
+
+    .page__sub-content {}
+
+    .page__footer {}
+
+        .page__copyright {} */
+
+// If adding another layer to componet, we don't need to go through the DOM
+// so  .person__eye {} instead of .person__head__eye {}
+
+// Modifying Elements:
+
+// use js-class for js hooks. Apparently data-* are not meant to be used as
+// hooks according to the spec.
+
+// SELECTOR INTENT:
+// .site-nav {} better than header ul {}
+
+// Keep reusability in mind
+
+// LOCATION INDEPENDENCE:
+// Style based on WHAT things are not WHERE they are.
+
+// Portability:
+// Don't over qualify a selector. However, it is legitimate
+
+// Quasi-Qualified Selectors:
+// /*ul*/.nav {}
+
+// Naming:
+// My advice with regard to naming things in CSS is to pick a name 
+// that is sensible, but somewhat ambiguous: aim for high reusability.
+// instead of .site-nav, choose something like .primary-nav; 
+// rather than .footer-links, 
+// favour a class like .sub-links.
+
+// Using a class name to describe content is redundant 
+// because content describes itself.
+
+/**
+ * Runs the risk of becoming out of date; not very maintainable.
+ */
+.blue {
+    color: blue;
+}
+
+/**
+ * Depends on location in order to be rendered properly.
+ */
+.header span {
+    color: blue;
+}
+
+/**
+ * Too specific; limits our ability to reuse.
+ */
+.header-color {
+    color: blue;
+}
+
+/**
+ * Nicely abstracted, very portable, doesn’t risk becoming out of date.
+ */
+.highlight-color {
+    color: blue;
+}
+
+// Selector Performance:
+// By using a child selector (e.g. .foo > .bar {}) we can make the 
+// process much more efficient, because this only requires the browser 
+// to look one level higher in the DOM, and it will stop regardless of
+// whether or not it found a match.
+
+// SPECIFICITY
+// Advice seems to be just to use single classes where possible.
+// Avoid nesting as it leads to specificity
+// "As a rule, if a selector will work without it being nested 
+// then do not nest it."
+
+// Proactive use of !important is when it is used before you’ve 
+// encountered any specificity problems; when it is used as a 
+// guarantee rather than as a fix.
+
+// Hacking Specificity: 
+// .site-nav.site-nav {} doubles the specificity but does not introduce any 
+// dependency on location.
+// What if third party code has an ID? Use this
+// [id="third-party-widget"] {}
+// Here we are selecting based on an attribute rather than an ID, and 
+// attribute selectors have the same specificity as a class.
+
+
+// Architectural Principles:

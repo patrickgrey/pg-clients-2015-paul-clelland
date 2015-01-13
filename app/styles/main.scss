@@ -1,12 +1,82 @@
+/**
+ * This site's responsive header...
+ * (This is a main comment to descript what happens to the main parts of the 
+ * site). Complete after design finished.
+ */
+
+
+
+
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ * Buttons..............Button elements.
+ *
+ * TRUMPS
+ * Text.................Text helpers.
+ */
+
 $icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.pc-button {
+    display: inline-block;
+    float: right;
+    // border: 1px solid;
+    border-radius: 0.25em;
+    padding: 1em 0.75em;
+    // font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background: #66af10;
+}
+
+.pc-button:hover, .pc-button:focus {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/**
+ * These rules extend `.pc-button {}` above.
+ */
+.pc-menu {
+    margin: 0.5em;
+}
+
 .skip a
 { 
     position:absolute; 
     left:1em; 
-    top:-3em;
+    top:-6em;
     font-size: 2em;
     color: #fff;
     background: #76b2aa;
@@ -32,11 +102,28 @@ $icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 .pc-logo-container {
-  width: 50%;
+  width: 70%;
+  margin: 0.5em 0 0 0.5em;
 }
 
 .pc-logo {
   width: 100%;
+}
+
+
+
+[role="navigation"] {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    padding: 1em 5% 3em;
+}
+
+[role="navigation"] {
+    background: black;
+    color: white;
 }
 
 /* Responsive: Portrait tablets and up */
