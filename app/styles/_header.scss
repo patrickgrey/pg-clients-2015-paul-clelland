@@ -1,0 +1,67 @@
+/**
+ * Skip to content link, logo and menu button.
+ */
+
+
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
+/**
+ * Skip-to-content
+ */
+
+.pc-skip-to-content a
+{ 
+    position:absolute; 
+    left:1em; 
+    top:-6em;
+    font-size: 2em;
+    color: #fff;
+    background: #333;
+    padding: 0.5em;
+    -webkit-border-bottom-right-radius: 0.25em;
+    -webkit-border-bottom-left-radius: 0.25em;
+    -moz-border-radius-bottomright: 0.25em;
+    -moz-border-radius-bottomleft: 0.25em;
+    border-bottom-right-radius: 0.25em;
+    border-bottom-left-radius: 0.25em;
+    -webkit-box-shadow: 0px 5px 14px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 5px 14px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 5px 14px 0px rgba(50, 50, 50, 0.75);
+} 
+ 
+.pc-skip-to-content a:focus 
+{ 
+    position: absolute;
+    top: 0px;
+    outline: 0;
+    -webkit-transition: top .2s ease-in;
+    transition: top .2s ease-in;
+}
+
+/**
+ * Logo
+ */
+
+.pc-logo {
+  width: 70%;
+  margin: 0.5em 0 0 0.5em;
+}
+
+/**
+ * Width has to be 100% so SVG fills div correctly, hence parent div to
+ * set correct width.
+ */
+.pc-logo-svg {
+  width: 100%;
+}
+
+/**
+ * Open menu button. Extends '.pc-button {}'.
+ */
+.pc-menu {
+    float: right;
+    margin: 0.5em 1em 0.5em 0.5em;
+    // margin-right: 1em;
+}

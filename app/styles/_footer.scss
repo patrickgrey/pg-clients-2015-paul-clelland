@@ -1,0 +1,27 @@
+/**
+ * Copyright and designed by.
+ */
+
+
+/*------------------------------------*\
+    #FOOTER
+\*------------------------------------*/
+
+/**
+ * xxxx
+ */
+
+.pc-footer {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 3em;
+    padding-left: $pc-container-padding;
+    padding-right: $pc-container-padding;
+    min-height: 100%;
+    background: #666;
+    color: white;
+}
+
+.pc-footer__link {
+    color: #66af10;
+}

@@ -22,12 +22,15 @@
  * Box-sizing...........Better default `box-sizing`.
  *
  * BASE
+ * HTML, body...........Base elements.
  * Headings.............H1–H6 styles.
  *
  * OBJECTS
  * Wrappers.............Wrapping and constraining elements.
  *
  * COMPONENTS
+ * Skip-to-content......Link that appears on first tab to skip to main content.
+ * Logo.................SVG logo with png fallaback.
  * Page-head............The main page header.
  * Page-foot............The main page footer.
  * Buttons..............Button elements.
@@ -36,25 +39,106 @@
  * Text.................Text helpers.
  */
 
+
+
+
+
+/*------------------------------------*\
+    #BOOTSTRAP
+\*------------------------------------*/
+
 $icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+
+
+
+
+
+/*------------------------------------*\
+    #BOOTSTRAP
+\*------------------------------------*/
+
+/**
+ * Variables.
+ */
+
+$pc-container-padding:              1em;
+
+
+
+
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
 
 html, body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Merriweather', serif;
 }
+
+
+h1, h2, h3, h4, h5, cite {
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+/*------------------------------------*\
+    #OBJECTS
+\*------------------------------------*/
+
+/**
+ * Main content.
+ */
+.pc-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: $pc-container-padding;
+    padding-right: $pc-container-padding;
+    background: #fff;
+}
+
+/**
+ * Need to put a wrapper round logo, call to action and content to make menu
+ * work. Padding should be on another container.
+ */
+
+// @media all and (max-width: 35em) {
+    
+//     [role="main"], .pc-logo, .pc-call-to-action {
+//         transition: all .25s;
+//         width: 100%;
+//         position: absolute;
+//         z-index: 2;
+//         top: 0;
+//         right: 0;
+//     }
+    
+//     .active [role="main"], .active .pc-logo, .active .pc-call-to-action {
+//         transform: translateX(-75%);
+//     }
+    
+// }
+
+
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+
+/**
+ * Buttons
+ */
 
 .pc-button {
     display: inline-block;
-    float: right;
-    // border: 1px solid;
     border-radius: 0.25em;
     padding: 1em 0.75em;
-    // font-weight: bold;
     text-decoration: none;
     color: #fff;
     background: #66af10;
@@ -65,66 +149,86 @@ html, body {
     color: #fff;
 }
 
-/**
- * These rules extend `.pc-button {}` above.
- */
-.pc-menu {
-    margin: 0.5em;
-}
-
-.skip a
-{ 
-    position:absolute; 
-    left:1em; 
-    top:-6em;
-    font-size: 2em;
+.pc-button-round {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 1em 0.75em;
+    text-decoration: none;
     color: #fff;
-    background: #76b2aa;
-    padding: 0.5em;
-    -webkit-border-bottom-right-radius: 0.25em;
-    -webkit-border-bottom-left-radius: 0.25em;
-    -moz-border-radius-bottomright: 0.25em;
-    -moz-border-radius-bottomleft: 0.25em;
-    border-bottom-right-radius: 0.25em;
-    border-bottom-left-radius: 0.25em;
-    -webkit-box-shadow: 0px 5px 14px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 5px 14px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 5px 14px 0px rgba(50, 50, 50, 0.75);
-} 
- 
-.skip a:focus 
-{ 
+    background: #ccc;
+    border: 4px solid #eee;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.65);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.65);
+}
+
+.pc-button-round:hover {
+    background: #eee;
+    border: 4px solid #fff;
+}
+
+.pc-button-text {
+    position: absolute !important;
+    height: 1px; width: 1px; 
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.pc-continue-reading {
     position: absolute;
-    top: 0px;
-    outline: 0;
-    -webkit-transition: top .1s ease-in;
-    transition: top .1s ease-in;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -25px;
 }
 
-.pc-logo-container {
-  width: 70%;
-  margin: 0.5em 0 0 0.5em;
+.pc-continue-reading::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 15px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 17.32px solid #999;
 }
 
-.pc-logo {
-  width: 100%;
-}
+
+/**
+ * Skip-to-content, menu button & logo
+ */
+
+@import "_header.scss";
+
+/**
+ * Call to action including bio photo and quote.
+ */
+
+@import "_callToAction.scss";
+
+/**
+ * Call to action including bio photo and quote.
+ */
+
+@import "_content.scss";
+
+/**
+ * Navigation menu.
+ */
+
+@import "_nav.scss";
 
 
+/**
+ * Copyright and designed by.
+ */
 
-[role="navigation"] {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    min-height: 100%;
-    padding: 1em 5% 3em;
-}
-
-[role="navigation"] {
-    background: black;
-    color: white;
-}
+@import "_footer.scss";
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
