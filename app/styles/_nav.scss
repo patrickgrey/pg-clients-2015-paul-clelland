@@ -67,14 +67,15 @@
     }
 }
 
-// @media all and (max-width: 35em) {
+@media all and (max-width: 35em) {
     
-//     [role="navigation"] {
-//         width: 75%;
-//         position: absolute;
-//         z-index: 1;
-//         top: 0;
-//         right: 0;
-//     }
+    .cutsthemustard [role="navigation"] {
+        width: 75%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background: #333;
+    }
     
-// }
+}

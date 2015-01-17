@@ -8,6 +8,17 @@
 \*------------------------------------*/
 
 /**
+ * Main content.
+ */
+.pc-content {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: $pc-content-padding;
+    padding-right: $pc-content-padding;
+    background: #fff;
+}
+
+/**
  * xxxx
  */
 

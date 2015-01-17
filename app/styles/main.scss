@@ -64,7 +64,7 @@ $icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/boots
  * Variables.
  */
 
-$pc-container-padding:              1em;
+$pc-content-padding:              1em;
 
 
 
@@ -92,38 +92,30 @@ h1, h2, h3, h4, h5, cite {
     #OBJECTS
 \*------------------------------------*/
 
-/**
- * Main content.
- */
-.pc-container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: $pc-container-padding;
-    padding-right: $pc-container-padding;
-    background: #fff;
-}
+
 
 /**
  * Need to put a wrapper round logo, call to action and content to make menu
- * work. Padding should be on another container.
+ * work. Padding should be on another content.
  */
 
-// @media all and (max-width: 35em) {
+@media all and (max-width: 35em) {
     
-//     [role="main"], .pc-logo, .pc-call-to-action {
-//         transition: all .25s;
-//         width: 100%;
-//         position: absolute;
-//         z-index: 2;
-//         top: 0;
-//         right: 0;
-//     }
+    .cutsthemustard .pc-container {
+        transition: all .25s;
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        background: #fff;
+    }
     
-//     .active [role="main"], .active .pc-logo, .active .pc-call-to-action {
-//         transform: translateX(-75%);
-//     }
+    .cutsthemustard .active .pc-container {
+        transform: translateX(-75%);
+    }
     
-// }
+}
 
 
 
