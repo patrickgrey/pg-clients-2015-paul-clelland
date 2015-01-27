@@ -11,17 +11,36 @@
  * Main content.
  */
 .pc-content {
+    
+    background: #fff;
+}
+
+.pc-content-margin {
     margin-right: auto;
     margin-left: auto;
     padding-left: $pc-content-padding;
     padding-right: $pc-content-padding;
-    background: #fff;
+}
+
+.pc-content-bg-color-odd {
+    background: $pc-content-bg-color-odd;
 }
 
 /**
  * xxxx
  */
 
-.pc-what-i-can-do, .pc-about-me {
-    margin-top: 5em;
+.pc-section {
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+}
+
+.pc-content-title {
+    margin-bottom: 1.15em;
+}
+
+.pc-img-full-width {
+    width: 100%;
+    height: auto;
+    padding: 1em 0 2em 0;
 }
