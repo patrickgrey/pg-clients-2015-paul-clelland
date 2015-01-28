@@ -45,3 +45,24 @@
     height: auto;
     padding: 1em 0 2em 0;
 }
+
+
+@media all and (min-width: $pc-bp-nav-show-menu) {
+    
+    .pc-content-margin {
+        padding-left: $pc-content-padding-medium;
+        padding-right: $pc-content-padding-medium;
+    }
+    
+    .pc-section {
+        padding-bottom: 6em;
+    }
+    
+    .pc-img-full-width {
+        max-width: 45%;
+        float: left;
+        padding: 0 3em 3em $pc-content-padding-medium;
+        // margin-bottom: 3em;
+        // padding: 1em 0 2em 0;
+    }
+}

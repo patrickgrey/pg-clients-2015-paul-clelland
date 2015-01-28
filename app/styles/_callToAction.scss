@@ -40,4 +40,12 @@
     margin-bottom: 0;
 }
 
-
+@media all and (min-width: $pc-bp-nav-show-menu) {
+    
+    .pc-call-to-action {
+        margin-top: 12em;
+        padding-left: $pc-content-padding-medium + 1em;
+        padding-right: $pc-content-padding-medium + 1em;
+    }
+    
+}

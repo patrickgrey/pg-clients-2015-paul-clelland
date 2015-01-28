@@ -65,7 +65,10 @@ $icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/boots
  */
 
 $pc-content-padding:              1em;
+$pc-content-padding-medium:       3em;
 $pc-content-bg-color-odd:         #ccdeea;
+$pc-bp-nav-show-menu:             60em;
+$pc-bp-content-medium-max-width:  56em;
 
 
 
@@ -84,6 +87,13 @@ html, body {
     font-size: 16px;
     line-height: 1.7em;
     background: #333;
+}
+
+@media all and (min-width: $pc-bp-nav-show-menu) {
+    html, body {
+        font-size: 18px;
+        background: #fff;
+    }
 }
 
 
@@ -105,12 +115,21 @@ h2 {
     background: #fff;
 }
 
+@media all and (min-width: $pc-bp-nav-show-menu) {
+    
+    .pc-container {
+        max-width: $pc-bp-content-medium-max-width;
+        margin: 0 auto;
+    }
+    
+}
+
 /**
  * Need to put a wrapper round logo, call to action and content to make menu
  * work. Padding should be on another content.
  */
 
-@media all and (max-width: 35em) {
+@media all and (max-width: $pc-bp-nav-show-menu) {
     
     .cutsthemustard .pc-container {
         transition: all .25s;
@@ -221,6 +240,14 @@ h2 {
     border-bottom: 17.32px solid #999;
 }
 
+@media all and (min-width: $pc-bp-nav-show-menu) {
+    
+    .pc-continue-reading, .pc-jump-to-top {
+        display: none;
+    }
+    
+}
+
 /**
  * Cite
  */
@@ -277,8 +304,3 @@ h2 {
  */
 
 @import "_footer.scss";
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    
-}

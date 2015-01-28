@@ -20,7 +20,7 @@
             ev = ev || win.event;
             var target = ev.target || ev.srcElement;
             if (target.className.indexOf(linkclass) !== -1) {
-                if (target.className.indexOf(ignoreLinkClass) !== -1) ev.preventDefault();
+                if (target.className.indexOf(ignoreLinkClass) !== -1) {ev.preventDefault();}
                 toggleClassName(doc.body, activeclass);
             }
         };

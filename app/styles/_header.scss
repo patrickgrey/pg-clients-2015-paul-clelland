@@ -45,9 +45,10 @@
  */
 
 .pc-logo {
-  width: 70%;
-  margin: 0 0 0 0.5em;
-  padding-top: 1em;
+    width: 70%;
+    max-width: 400px;
+    margin: 0 0 0 0.5em;
+    padding-top: 1em;
 }
 
 /**
@@ -55,7 +56,7 @@
  * set correct width.
  */
 .pc-logo-svg {
-  width: 100%;
+    width: 100%;
 }
 
 /**
@@ -66,4 +67,17 @@
     margin: 2.8em 1em 0.5em 0.5em;
     font-size: 0.8em;
     // margin-right: 1em;
+}
+
+
+@media all and (min-width: $pc-bp-nav-show-menu) {
+    
+    .pc-menu {
+        display: none;
+    }
+    
+    .pc-logo {
+        // max-width: 300px;
+        margin: 0 auto;
+    }
 }
