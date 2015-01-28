@@ -18,7 +18,7 @@
     width: 100%;
     // min-height: 100%;
     // padding: 1em 5% 3em;
-    background: #666;
+    // background: #666;
     color: white;
 }
 
@@ -46,10 +46,19 @@
 .primary-nav__link {
     display: block;
     font-size: 1.5em;
-    padding: 0.5em 1em;
+    padding: 1em 1em 0em 1em;
     width: 100%;
-    color: #333;
-    background: #eee;
+    color: #fff;
+    // background: #eee;
+}
+
+.secondary-nav {
+    margin: 0;
+    list-style: none;
+}
+
+.secondary-nav__link {
+    color: #ddd;
 }
 
 @media all and (min-width: 35em) {
@@ -87,7 +96,7 @@
     }
     
     .cutsthemustard .primary-nav {
-        padding: 8em 0 0 0;
+        padding: 1em 0 0 0;
     }
     
 }

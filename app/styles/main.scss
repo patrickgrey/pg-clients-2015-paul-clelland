@@ -83,13 +83,15 @@ html, body {
     font-family: 'Merriweather', serif;
     font-size: 16px;
     line-height: 1.7em;
+    background: #333;
 }
 
 
-h1, h2, h3, h4, h5, cite {
+h1, h2, h3, h4, h5, cite, .primary-nav {
     font-family: 'Quicksand', sans-serif;
 }
 
+// Add leaf motif before h2 headers
 h2 {
     text-align: center;
 }
@@ -191,10 +193,30 @@ h2 {
     width: 0;
     height: 0;
     position: absolute;
+    left: 11px;
     top: 15px;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 17.32px solid #999;
+}
+
+.pc-jump-to-top {
+    position: absolute;
+    top: -27px;
+    left: 50%;
+    margin-left: -25px;
+}
+
+.pc-jump-to-top::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 11px;
+    top: 12px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 17.32px solid #999;
 }
 
 
