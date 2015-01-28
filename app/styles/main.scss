@@ -101,7 +101,9 @@ h2 {
     #OBJECTS
 \*------------------------------------*/
 
-
+.pc-container {
+    background: #fff;
+}
 
 /**
  * Need to put a wrapper round logo, call to action and content to make menu
@@ -117,7 +119,6 @@ h2 {
         z-index: 2;
         top: 0;
         right: 0;
-        background: #fff;
     }
     
     .cutsthemustard .active .pc-container {
@@ -186,6 +187,7 @@ h2 {
     bottom: -20px;
     left: 50%;
     margin-left: -25px;
+    z-index: 1;
 }
 
 .pc-continue-reading::before {
@@ -219,11 +221,14 @@ h2 {
     border-bottom: 17.32px solid #999;
 }
 
+/**
+ * Cite
+ */
 
 .pc-cite {
     display: block;
     width: 100%;
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: right;
     margin: auto;
     padding-right: 1em;

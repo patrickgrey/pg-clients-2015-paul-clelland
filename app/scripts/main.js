@@ -7,6 +7,7 @@
     var linkclass = 'pc-menu-toggle',
         activeclass = 'active',
         enhanceclass = 'cutsthemustard',
+        ignoreLinkClass = 'pc-button',
         toggleClassName = function (element, toggleClass) {
             var reg = new RegExp('(\\s|^)' + toggleClass + '(\\s|$)');
             if (!element.className.match(reg)) {
@@ -19,7 +20,7 @@
             ev = ev || win.event;
             var target = ev.target || ev.srcElement;
             if (target.className.indexOf(linkclass) !== -1) {
-                ev.preventDefault();
+                if (target.className.indexOf(ignoreLinkClass) !== -1) ev.preventDefault();
                 toggleClassName(doc.body, activeclass);
             }
         };
