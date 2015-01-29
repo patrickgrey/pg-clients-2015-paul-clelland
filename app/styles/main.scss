@@ -104,6 +104,22 @@ h1, h2, h3, h4, h5, cite, .primary-nav {
 // Add leaf motif before h2 headers
 h2 {
     text-align: center;
+    position: relative;
+}
+
+// using :before on the h2 deosn't work as the text is centred so the content
+// appears at the very left.
+// Left with this unforuntate solution. Other solution would be to wrap in DIV.
+.pc-leaf-motif::after {
+    content: "";
+    position: absolute;
+    top: -0.4em;
+    // right: 0.5em;
+    margin-left: -1.2em;
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background: url(../images/pg2015ClientsPaulClellandLeaf.svg) no-repeat; 
 }
 
 
