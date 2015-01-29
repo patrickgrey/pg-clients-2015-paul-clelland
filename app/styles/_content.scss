@@ -46,6 +46,35 @@
     padding: 1em 0 2em 0;
 }
 
+// services icons
+.pc-icon-calculator::before {
+    background: orange url(../images/icons/calculator.svg) no-repeat;
+}
+
+.pc-icon-area-graph::before {
+    background: orange url(../images/icons/area-graph.svg) no-repeat;
+}
+
+.pc-icon-users::before {
+    background: orange url(../images/icons/users.svg) no-repeat;
+}
+
+.pc-icon-calculator::before, .pc-icon-area-graph::before, .pc-icon-users::before {
+    content: "";
+    display: block;
+    margin: 1.5em auto 1em auto;
+    padding: 2em;
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+    background-size: 50%;
+    background-position: 50%;
+}
+
+
+
+
+
 
 @media all and (min-width: $pc-bp-nav-show-menu) {
     

@@ -12,14 +12,39 @@
  */
 
 .pc-footer {
+    width:100%;
+    overflow: hidden;
     margin-right: auto;
     margin-left: auto;
-    padding: 3em $pc-content-padding 3em $pc-content-padding;
+    padding: 2em $pc-content-padding 7em $pc-content-padding;
     min-height: 100%;
     background: #666;
     color: white;
 }
 
+/* .pc-footer--copy {
+    float: none;
+}
+
+.pc-footer--design {
+    float: left;
+} */
+
 .pc-footer__link {
     color: #66af10;
+}
+
+@media all and (min-width: $pc-bp-nav-show-menu) {
+    
+    .pc-footer {
+        padding: 2em $pc-content-padding-medium 7em $pc-content-padding-medium;
+    }
+    
+    .pc-footer--copy {
+        float: left;
+    }
+    
+    .pc-footer--design {
+        float: right;
+    }
 }
